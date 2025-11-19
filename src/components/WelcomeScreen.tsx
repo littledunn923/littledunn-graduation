@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const WelcomeScreen = ({
   setScreen,

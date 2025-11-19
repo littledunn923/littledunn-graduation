@@ -1,5 +1,3 @@
-import React from "react";
-
 const SpinnerCat = () => {
   return (
     <div className="cat-container">

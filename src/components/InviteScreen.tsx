@@ -1,5 +1,5 @@
 import { ArrowBigDown, ArrowBigLeft } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 
 // Custom hook for typewriter effect on scroll into view
 // const useTypewriterOnScroll = (

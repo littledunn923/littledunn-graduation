@@ -14,10 +14,10 @@ const WelcomeScreen = ({
   }, []);
   return (
     <div className="h-full flex flex-col items-center justify-center text-center">
-      <h1 className="text-7xl sm:text-8xl font-black text-[#8C3500] grenze-bold tracking-widest sm:leading-[96px] leading-[72px] animate-fade animate-once animate-duration-[2000ms]">
+      <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-[#8C3500] grenze-bold tracking-widest sm:leading-[96px] leading-[72px] animate-fade animate-once animate-duration-[2000ms]">
         YOU GET AN INVITATION
       </h1>
-      <p className="text-white text-6xl mt-3 indie-flower-regular drop-shadow-lg drop-shadow-[#F6CA92]">
+      <p className="text-white text-5xl sm:text-6xl mt-3 indie-flower-regular drop-shadow-lg drop-shadow-[#F6CA92]">
         from littledunn
       </p>
       <div className="relative w-fit h-fit mb-40 mt-9">
@@ -26,8 +26,7 @@ const WelcomeScreen = ({
           className="relative animate-[light-bounce_1s_infinite]"
           src="avatar-welcome.png"
           alt="avatar"
-          width={583}
-          height={371}
+          width={400}
         />
       </div>
       <button

@@ -110,16 +110,16 @@ const InviteScreen = ({
         <ArrowBigLeft className="size-6" fill="#8C3500" />
       </button>
       <div className="relative min-h-full w-full flex flex-col items-center justify-center px-[5%] sm:px-[10%] snap-start">
-        <h1 className="text-7xl sm:text-8xl font-black grenze-bold tracking-widest animate-fade animate-once animate-duration-[2000ms]">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-black grenze-bold tracking-widest animate-fade animate-once animate-duration-[2000ms]">
           GRADUATION
         </h1>
-        <p className="text-white text-5xl mt-3 indie-flower-regular drop-shadow-lg drop-shadow-[#F6CA92]">
+        <p className="text-white text-4xl sm:text-5xl mt-3 indie-flower-regular drop-shadow-lg drop-shadow-[#F6CA92]">
           ceremony
         </p>
-        <div className="text-base sm:text-2xl font-medium mt-9 text-center">
+        <div className="text-sm sm:text-base md:text-2xl font-medium mt-0 sm:mt-4 text-center">
           <div className="flex items-baseline justify-center gap-3">
             Thân mời:{" "}
-            <div className="h-[40px] bonheur-royale-regular text-[40px] border-dashed border-b-2 border-[#8C3500] mb-[-2px]">
+            <div className="h-[24px] sm:h-[40px] bonheur-royale-regular text-[24px] sm:text-[40px] border-dashed border-b-1 sm:border-b-2 border-[#8C3500] mb-[-2px]">
               Quý anh chị em bạn dì gần xa
             </div>
           </div>
@@ -128,29 +128,31 @@ const InviteScreen = ({
             nghiệp
           </p>
         </div>
-        <div className="relative w-fit h-fit mb-15  mt-9">
+        <div className="relative w-fit h-fit mb-6 mt-4">
           <img className="absolute" src="degree.png" alt="degree" />
           <img
             className="relative animate-[super-light-bounce_1s_infinite]"
             src="avatar-run.png"
             alt="avatar"
-            width={703}
+            width={450}
           />
         </div>
-        <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-2">
-          <div className="space-y-3 text-center py-3 sm:py-0 animate-fade animate-once animate-duration-[2000ms]">
-            <p className="font-semibold text-2xl">{timeText}</p>
-            <p className="text-base font-medium">{dateText}</p>
+        <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-1 sm:gap-2">
+          <div className="space-y-3 text-center py-2 sm:py-0 animate-fade animate-once animate-duration-[2000ms]">
+            <p className="font-semibold text-base sm:text-2xl">{timeText}</p>
+            <p className="text-sm sm:text-base font-medium">{dateText}</p>
           </div>
           <div className="h-px w-full border-b-2 border-dashed border-[#8C3500] sm:hidden" />
-          <div className="space-y-3 text-center py-3 sm:py-0 animate-fade animate-once animate-duration-[2000ms]">
-            <p className="font-semibold text-2xl">{locationText}</p>
-            <p className="text-base font-medium">{locationText2}</p>
+          <div className="space-y-3 text-center py-2 sm:py-0 animate-fade animate-once animate-duration-[2000ms]">
+            <p className="font-semibold text-base sm:text-2xl">
+              {locationText}
+            </p>
+            <p className="text-sm sm:text-base font-medium">{locationText2}</p>
           </div>
           <div className="h-px w-full border-b-2 border-dashed border-[#8C3500] sm:hidden" />
-          <div className="space-y-3 text-center py-3 sm:py-0 animate-fade animate-once animate-duration-[2000ms]">
-            <p className="font-semibold text-2xl">{phoneText}</p>
-            <p className="text-base font-medium">{messageText}</p>
+          <div className="space-y-3 text-center py-2 sm:py-0 animate-fade animate-once animate-duration-[2000ms]">
+            <p className="font-semibold text-base sm:text-2xl">{phoneText}</p>
+            <p className="text-sm sm:text-base font-medium">{messageText}</p>
           </div>
         </div>
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 animate-bounce text-[#8C3500]">
@@ -159,12 +161,12 @@ const InviteScreen = ({
       </div>
 
       <div className="relative min-h-full w-full flex flex-col items-center justify-center snap-start text-center px-[5%] sm:px-[10%]">
-        <h1 className="text-7xl sm:text-8xl font-black grenze-bold tracking-widest z-10 animate-fade animate-once animate-duration-[2000ms]">
+        <h1 className="text-6xl sm:text-7xl md:text-8xl font-black grenze-bold tracking-widest z-10 animate-fade animate-once animate-duration-[2000ms]">
           LỜI CẢM ƠN
         </h1>
         <div
           ref={thankYouTextRef}
-          className="text-base sm:text-2xl font-medium text-center mt-16 leading-[48px] z-10 whitespace-pre-line"
+          className="text-sm sm:text-base md:text-2xl font-medium text-center mt-6 leading-[36px] sm:leading-[48px] z-10 whitespace-pre-line"
         >
           {displayedThankYouText}
           {isTypingThankYou && (
@@ -178,12 +180,12 @@ const InviteScreen = ({
         />
         {!isTypingThankYou && (
           <>
-            <div className="relative w-fit h-fit mb-15 mt-9 animate-fade animate-once animate-duration-[2000ms]">
+            <div className="relative w-fit h-fit mb-6 mt-4 animate-fade animate-once animate-duration-[2000ms]">
               <img
                 className="relative"
                 src="avatar-thankyou.png"
                 alt="avatar"
-                width={532}
+                width={300}
               />
             </div>
             <div className="text-center font-semibold text-2xl animate-fade animate-once animate-duration-[2000ms]">

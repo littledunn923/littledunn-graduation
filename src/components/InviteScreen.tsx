@@ -2,80 +2,80 @@ import { ArrowBigDown, ArrowBigLeft } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 // Custom hook for typewriter effect on scroll into view
-const useTypewriterOnScroll = (
-  text: string,
-  speed: number = 30
-): [string, React.RefObject<HTMLDivElement | null>, boolean] => {
-  const [displayedText, setDisplayedText] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
-  const hasStartedRef = useRef(false);
-  const typeIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const elementRef = useRef<HTMLDivElement>(null);
+// const useTypewriterOnScroll = (
+//   text: string,
+//   speed: number = 30
+// ): [string, React.RefObject<HTMLDivElement | null>, boolean] => {
+//   const [displayedText, setDisplayedText] = useState("");
+//   const [isTyping, setIsTyping] = useState(false);
+//   const hasStartedRef = useRef(false);
+//   const typeIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+//   const elementRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const element = elementRef.current;
-    if (!element || hasStartedRef.current) return;
+//   useEffect(() => {
+//     const element = elementRef.current;
+//     if (!element || hasStartedRef.current) return;
 
-    const startTyping = () => {
-      if (hasStartedRef.current) return;
-      hasStartedRef.current = true;
-      setIsTyping(true);
-      setDisplayedText("");
+//     const startTyping = () => {
+//       if (hasStartedRef.current) return;
+//       hasStartedRef.current = true;
+//       setIsTyping(true);
+//       setDisplayedText("");
 
-      let currentIndex = 0;
-      typeIntervalRef.current = setInterval(() => {
-        if (currentIndex < text.length) {
-          setDisplayedText(text.slice(0, currentIndex + 1));
-          currentIndex++;
-        } else {
-          setIsTyping(false);
-          if (typeIntervalRef.current) {
-            clearInterval(typeIntervalRef.current);
-            typeIntervalRef.current = null;
-          }
-        }
-      }, speed);
-    };
+//       let currentIndex = 0;
+//       typeIntervalRef.current = setInterval(() => {
+//         if (currentIndex < text.length) {
+//           setDisplayedText(text.slice(0, currentIndex + 1));
+//           currentIndex++;
+//         } else {
+//           setIsTyping(false);
+//           if (typeIntervalRef.current) {
+//             clearInterval(typeIntervalRef.current);
+//             typeIntervalRef.current = null;
+//           }
+//         }
+//       }, speed);
+//     };
 
-    // Check if element is already visible
-    const rect = element.getBoundingClientRect();
-    const isVisible =
-      rect.top < window.innerHeight &&
-      rect.bottom > 0 &&
-      rect.left < window.innerWidth &&
-      rect.right > 0;
+//     // Check if element is already visible
+//     const rect = element.getBoundingClientRect();
+//     const isVisible =
+//       rect.top < window.innerHeight &&
+//       rect.bottom > 0 &&
+//       rect.left < window.innerWidth &&
+//       rect.right > 0;
 
-    if (isVisible) {
-      // Small delay to ensure component is fully rendered
-      setTimeout(() => {
-        startTyping();
-      }, 100);
-    }
+//     if (isVisible) {
+//       // Small delay to ensure component is fully rendered
+//       setTimeout(() => {
+//         startTyping();
+//       }, 100);
+//     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasStartedRef.current) {
-            startTyping();
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px" }
-    );
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting && !hasStartedRef.current) {
+//             startTyping();
+//           }
+//         });
+//       },
+//       { threshold: 0.1, rootMargin: "0px" }
+//     );
 
-    observer.observe(element);
+//     observer.observe(element);
 
-    return () => {
-      observer.disconnect();
-      if (typeIntervalRef.current) {
-        clearInterval(typeIntervalRef.current);
-        typeIntervalRef.current = null;
-      }
-    };
-  }, [text, speed]);
+//     return () => {
+//       observer.disconnect();
+//       if (typeIntervalRef.current) {
+//         clearInterval(typeIntervalRef.current);
+//         typeIntervalRef.current = null;
+//       }
+//     };
+//   }, [text, speed]);
 
-  return [displayedText, elementRef, isTyping];
-};
+//   return [displayedText, elementRef, isTyping];
+// };
 
 const InviteScreen = ({
   setScreen,
@@ -92,8 +92,8 @@ const InviteScreen = ({
   const phoneText = "0868011923";
   const messageText = "Gọi em/mình để tìm thấy nhao nha!!!";
 
-  const [displayedThankYouText, thankYouTextRef, isTypingThankYou] =
-    useTypewriterOnScroll(thankYouText, 20);
+  // const [displayedThankYouText, thankYouTextRef, isTypingThankYou] =
+  //   useTypewriterOnScroll(thankYouText, 20);
 
   useEffect(() => {
     document.documentElement.style.setProperty(
@@ -164,36 +164,29 @@ const InviteScreen = ({
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-black grenze-bold tracking-widest z-10 animate-fade animate-once animate-duration-[2000ms]">
           LỜI CẢM ƠN
         </h1>
-        <div
-          ref={thankYouTextRef}
-          className="text-sm sm:text-base md:text-2xl font-medium text-center mt-6 leading-[28px] sm:leading-[48px] z-10 whitespace-pre-line"
-        >
-          {displayedThankYouText}
-          {isTypingThankYou && (
+        <div className="text-sm sm:text-base md:text-2xl font-medium text-center mt-6 leading-[28px] sm:leading-[48px] z-10 whitespace-pre-line">
+          {thankYouText}
+          {/* {isTypingThankYou && (
             <span className="inline-block w-0.5 h-[1.2em] bg-[#8C3500] ml-1 animate-pulse" />
-          )}
+          )} */}
         </div>
         <img
           src="cloud-thankyou.png"
           alt="cloud"
           className="absolute left-1/2 top-0 -translate-x-1/2 z-0"
         />
-        {!isTypingThankYou && (
-          <>
-            <div className="relative w-fit h-fit mb-4 mt-4 animate-fade animate-once animate-duration-[2000ms]">
-              <img
-                className="relative"
-                src="avatar-thankyou.png"
-                alt="avatar"
-                width={300}
-                loading="lazy"
-              />
-            </div>
-            <div className="text-center font-semibold text-base sm:text-2xl animate-fade animate-once animate-duration-[2000ms]">
-              Thanks a lot!!!
-            </div>
-          </>
-        )}
+        <div className="relative w-fit h-fit mb-4 mt-4 animate-fade animate-once animate-duration-[2000ms]">
+          <img
+            className="relative"
+            src="avatar-thankyou.png"
+            alt="avatar"
+            width={300}
+            loading="lazy"
+          />
+        </div>
+        <div className="text-center font-semibold text-base sm:text-2xl animate-fade animate-once animate-duration-[2000ms]">
+          Thanks a lot!!!
+        </div>
       </div>
     </div>
   );

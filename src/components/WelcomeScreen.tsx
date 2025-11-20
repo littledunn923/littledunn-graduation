@@ -9,7 +9,7 @@ const WelcomeScreen = ({
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--url-bg",
-      "url('./src/assets/bg-desktop-welcome.png')"
+      "url('bg-desktop-welcome.png')"
     );
   }, []);
   return (
@@ -18,17 +18,13 @@ const WelcomeScreen = ({
         YOU GET AN INVITATION
       </h1>
       <p className="text-white text-6xl mt-3 indie-flower-regular drop-shadow-lg drop-shadow-[#F6CA92]">
-        from littedunn
+        from littledunn
       </p>
       <div className="relative w-fit h-fit mb-40 mt-9">
-        <img
-          className="absolute bottom-[-30%]"
-          src="./src/assets/cloud.png"
-          alt="cloud"
-        />
+        <img className="absolute bottom-[-30%]" src="cloud.png" alt="cloud" />
         <img
           className="relative animate-[light-bounce_1s_infinite]"
-          src="./src/assets/avatar-welcome.png"
+          src="avatar-welcome.png"
           alt="avatar"
           width={583}
           height={371}

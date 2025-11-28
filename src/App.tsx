@@ -8,6 +8,7 @@ import Sparkle from "react-sparkle";
 function App() {
   const [screen, setScreen] = useState("welcome");
   const [isLoading, setIsLoading] = useState(false);
+  
 
   const handleScreenChange = (newScreen: string) => {
     setIsLoading(true);
